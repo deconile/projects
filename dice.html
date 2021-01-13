@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    
+        <script>
+            $(document).ready(function(){
+                $('#roll').click(function(){
+                    $('.die').removeClass('default face1 face2 face3 face4 face5 face6');
+                    $('.die-container').removeClass('rolling');
+                    setTimeout(function(){
+                        $('.die').each(function(){
+                            let x = 1 + Math.floor(Math.random() * 6);
+                            $(this).addClass('face'+x);
+                        });
+                        $('.die-container').addClass('rolling');
+                    }, 50);
+                });
+            });
+        </script>
+        
+        <style>
+            html, body {
+                width:100%;
+                height:100%;
+                margin:0;
+                background-color:#227722;
+            }
+            
+            #dice-area {
+                width:100px;
+                height:100px;
+                margin:auto;
+                position:relative;
+                top:50%;
+                transform: translateY(-50%);
+            }
+            
+            .die {transform-style: preserve-3d;
+                transform-origin: 50px 50px;
+            }
+            
+            .die-container:first-child {transform: translate(-100px, 50px)}
+            .die-container:last-child {transform: translate(100px, -50px)}
+            .die-container:first-child.rolling {animation: rolling1 2s ease;}
+            .die-container:last-child.rolling {animation: rolling2 2s ease;}
+            
+            .face {
+                width:100px;
+                height:100px;
+                background-color:#eee;
+                position: absolute;
+                backface-visibility: hidden;
+                box-shadow: inset 0px 0px 10px #ffffffff;
+                border-radius:4px;
+            }
+            
+            .pip {
+                width:20px;
+                height:20px;
+                border-radius:100%;
+                background-color:#444;
+                position: absolute;
+                transform:translate(-50%, -50%);
+                box-shadow: inset 1px 1px 5px #00000099;
+            }
+            
+            .one {transform:translateZ(-49px);}
+            .two {transform: rotateY(-90deg) translateZ(-49px);}
+            .three {transform: rotateX(-90deg) translateZ(-49px);}
+            .four {transform: rotateX(90deg) translateZ(-49px);}
+            .five {transform: rotateY(90deg) translateZ(-49px);}
+            .six {transform:rotateY(180deg) translateZ(-49px);}
+            
+            .default {transform: rotateX(-45deg) rotateY(0deg) rotateZ(45deg);}
+            .face1 {
+                transform: rotateX(-45deg) rotateY(0deg) rotateZ(45deg);
+                animation: roll1 2s;
+            }
+            .face2 {
+                transform: rotateX(45deg) rotateY(45deg) rotateZ(-90deg);
+                animation: roll2 2s;
+            }
+            .face3 {
+                transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg);
+                animation: roll3 2s;
+            }
+            .face4 {
+                transform: rotateX(45deg) rotateY(45deg) rotateZ(180deg);
+                animation: roll4 2s;
+            }
+            .face5 {
+                transform: rotateX(45deg) rotateY(45deg) rotateZ(90deg);
+                animation: roll5 2s;
+            }
+            .face6 {
+                transform: rotateX(-45deg) rotateY(180deg) rotateZ(45deg);
+                animation: roll6 2s;
+            }
+            
+            @keyframes rolling1 {
+                10% {transform: translate(-300px, -850px)}
+                40% {transform: translate(-140px, 50px)}
+                55% {transform: translate(-120px, -40px);animation-timing-function: ease-in}
+                70% {transform: translate(-120px, -20px);animation-timing-function: ease-out}
+                85% {transform: translate(-100px, 50px);animation-timing-function: ease-in}
+            }
+            @keyframes rolling2 {
+                20% {transform: translate(-100px, -950px)}
+                50% {transform: translate(60px, -50px)}
+                65% {transform: translate(80px, -140px);animation-timing-function: ease-in}
+                80% {transform: translate(80px, -120px);animation-timing-function: ease-out}
+                95% {transform: translate(100px, -50px);animation-timing-function: ease-in}
+            }
+            
+            @keyframes roll1 {
+                0% {transform: rotateX(-180deg) rotateY(360deg) rotateZ(135deg);}
+                100% {transform: rotateX(-45deg) rotateY(0deg) rotateZ(45deg);}
+            }
+            
+            @keyframes roll2 {
+                0% {transform: rotateX(-180deg) rotateY(270deg) rotateZ(-495deg);}
+                100% {transform: rotateX(45deg) rotateY(45deg) rotateZ(-90deg);}
+            }
+            
+            @keyframes roll3 {
+                0% {transform: rotateX(-180deg) rotateY(270deg) rotateZ(-495deg);}
+                100% {transform: rotateX(45deg) rotateY(45deg) rotateZ(0deg);}
+            }
+            
+            @keyframes roll4 {
+                0% {transform: rotateX(-180deg) rotateY(270deg) rotateZ(-495deg);}
+                100% {transform: rotateX(45deg) rotateY(45deg) rotateZ(180deg);}
+            }
+            
+            @keyframes roll5 {
+                0% {transform: rotateX(-180deg) rotateY(270deg) rotateZ(-495deg);}
+                100% {transform: rotateX(45deg) rotateY(45deg) rotateZ(90deg);}
+            }
+            
+            @keyframes roll6 {
+                0% {transform: rotateX(-180deg) rotateY(540deg) rotateZ(135deg);}
+                100% {transform: rotateX(-45deg) rotateY(180deg) rotateZ(45deg);}
+            }
+            
+            button {
+                position: absolute;
+                bottom:5%;
+                left:50%;
+                font-size:18px;
+                padding:1em 2em;
+                border-radius: 6px;
+                transform: translateX(-50%);
+                outline:none;
+                border:3px solid #fff;
+                font-weight:bold;
+                background-color:#111;
+                color:#fff;
+            }
+            
+        </style>
+    
+    
+    </head>
+    
+    
+    <body>
+    
+        <div id="dice-area">
+            <div class="die-container">
+            <div class="die default">
+                <div class="face one">
+                    <div class="pip" style="top:50%;left:50%;"></div>
+                </div>
+                <div class="face two">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+                <div class="face three">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:50%;left:50%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+                <div class="face four">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:25%;left:75%;"></div>
+                    <div class="pip" style="top:75%;left:25%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+                <div class="face five">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:25%;left:75%;"></div>
+                    <div class="pip" style="top:50%;left:50%;"></div>
+                    <div class="pip" style="top:75%;left:25%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+                <div class="face six">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:25%;left:75%;"></div>
+                    <div class="pip" style="top:50%;left:25%;"></div>
+                    <div class="pip" style="top:50%;left:75%;"></div>
+                    <div class="pip" style="top:75%;left:25%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+            </div>
+            </div>
+            <div class="die-container">
+            <div class="die default">
+                <div class="face one">
+                    <div class="pip" style="top:50%;left:50%;"></div>
+                </div>
+                <div class="face two">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+                <div class="face three">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:50%;left:50%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+                <div class="face four">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:25%;left:75%;"></div>
+                    <div class="pip" style="top:75%;left:25%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+                <div class="face five">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:25%;left:75%;"></div>
+                    <div class="pip" style="top:50%;left:50%;"></div>
+                    <div class="pip" style="top:75%;left:25%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+                <div class="face six">
+                    <div class="pip" style="top:25%;left:25%;"></div>
+                    <div class="pip" style="top:25%;left:75%;"></div>
+                    <div class="pip" style="top:50%;left:25%;"></div>
+                    <div class="pip" style="top:50%;left:75%;"></div>
+                    <div class="pip" style="top:75%;left:25%;"></div>
+                    <div class="pip" style="top:75%;left:75%;"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    
+        <button id="roll">ROLL</button>
+        
+    </body>
+    
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

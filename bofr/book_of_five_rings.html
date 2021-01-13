@@ -1,0 +1,1002 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stela - Book of Five Rings</title>
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Stela brings you immersive graphic novels and illustrated mbooks designed for your mobile. Explore. Experience. Enjoy. Begin reading today!">
+<meta name="keywords" content="">
+	
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stela - Book of Five Rings" />
+<meta property="og:url" content="https://stela-playground.herokuapp.com/book_of_five_rings">
+<meta property="og:image" content="https://stela-playground.herokuapp.com/images/novels/bofr/soc_bofr_fb.jpg" />
+<meta property="og:image:alt" content="Stela - Graphic stories on the go." />
+<meta property="og:description" content="Stela brings you immersive graphic novels and illustrated mbooks designed for your mobile. Explore. Experience. Enjoy. Begin reading today!" />
+<meta property="fb:app_id" content="873308696092816" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@readstela" />
+<meta name="twitter:creator" content="@readstela" />
+<meta name="twitter:image" content="https://stela-playground.herokuapp.com/images/novels/bofr/soc_bofr_tw.jpg">
+	
+	
+<script type="application/javascript">
+	if( window.innerWidth >= 1040 && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		null;
+	}
+	else{
+		window.location.replace('m-book_of_five_rings.html');
+	}
+	
+	window.onresize = function(){
+		if( window.innerWidth < 1040 ) {
+			window.location.replace('m-book_of_five_rings.html');
+		}
+		else{
+			null;
+		}
+	};
+</script>
+<link rel="stylesheet" media="all" href="css/fluidable.css" />
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:200,300,400);
+
+
+/* Reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Work Sans", Helvetica, Arial, "sans-serif";
+	font-weight: 100;
+}
+
+
+.dev_note {
+	postion:absolute;
+	background-color:rgba(153,153,153,0.5);
+	width:5px;
+	float:left;
+	margin:0 5px 0 0;
+	visibility: hidden;
+}
+	
+.stage {
+	position: fixed;
+	margin: 0 auto;
+	overflow: hidden;
+	width:100%;
+	min-height:100%;
+}
+	
+.cta-download-label {
+	color:#fff;
+}
+.lines {
+	background-color: #fff;
+}
+.app_badge {
+	position: relative;
+	width:150px;
+	padding:10px;
+	cursor: pointer;
+}
+
+.badges {
+	position: relative;
+	margin:10px auto;
+}
+
+.cta-download-label-group {
+	margin:40px 0 0;
+} 
+
+.cta-download-label {
+	font-size:0.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+	transform: translateY(-50%);
+}
+	.sc4-dust {animation: dust 0.1s infinite;}
+	@keyframes dust {
+  	0% {
+    	transform: translate(0, 0);
+  	}
+  	100% {
+    	transform: translate(-20px, 0);
+  	}
+	}
+		
+	.sc5_smoke-fore {animation: smoke-fore 180s infinite;}
+	@keyframes smoke-fore {
+  	0% {
+    	transform: translate(0%, 0);
+  	}
+	50% {
+    	transform: translate(-50%, 0);
+  	}
+  	100% {
+    	transform: translate(0%, 0);
+  	}
+	}
+	
+	.sc5_smoke-back {animation: smoke-back 180s infinite;}
+	@keyframes smoke-back {
+  	0% {
+    	transform: translate(0%, 0);
+  	}
+	50% {
+    	transform: translate(50%, 0);
+  	}
+  	100% {
+    	transform: translate(0%, 0);
+  	}
+	}
+	
+
+.scroll-begin {
+	position:fixed;
+	bottom:5%;
+	color:#999;
+	text-align:center;
+	left:50%;
+	transform:translateX(-50%) translateY(0);
+	z-index:10000;
+	animation: begin 1s infinite;
+	opacity:0;
+}
+	
+@keyframes begin {
+  	0% {
+    	transform: translateX(-50%) translateY(0);
+  	}
+  	50% {
+    	transform: translateX(-50%) translateY(-10px);
+  	}
+	100% {
+    	transform: translateX(-50%) translateY(0);
+  	}
+}
+	
+.v-mobile {
+	
+}
+	
+.v-mobile-sb img {
+	width:100%;margin-bottom:-3px;
+}
+
+</style>
+	
+<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->
+
+<!--<script src="https://stela.com/assets/application-cf30817ac1c88573ee467acb3fb34c6680869f0492280dc499af1653eea29794.js" data-turbolinks-track="true"></script>-->
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '148194672210734'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" src="https://www.facebook.com/tr?id=148194672210734&ev=PageView&noscript=1" alt=""/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Snap Pixel Code -->
+<script type="text/javascript">
+(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+{a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+r.src=n;var u=t.getElementsByTagName(s)[0];
+u.parentNode.insertBefore(r,u);})(window,document,
+'https://sc-static.net/scevent.min.js');
+
+snaptr('init', 'ce281e8e-3abb-4f54-a048-83e60a100474');
+
+snaptr('track', 'PAGE_VIEW');
+
+</script>
+<!-- End Snap Pixel Code -->
+	
+</head>
+
+<body>
+	
+<div class="v-dt">
+	
+<!--<div class="dev_notes">
+	<div style="position:fixed;z-index: 10000;"><a href="#top">top</a></div>
+	<div style="position:fixed;z-index: 10000;left:50px;"><a href="#middle">middle</a></div>
+	<div style="position:fixed;z-index: 10000;left:125px;"><a href="#bottom">bottom</a></div>
+</div>-->
+
+<div class="dev_notes" style="z-index:10000;">
+	
+	<div class="dev_note scene-1-back" style="height:500px;transform:translateY(300px);"></div>
+	<div class="dev_note scene-1-logo" style="height:500px;"></div>
+	<div class="dev_note scene-1-swipe" style="height:1400px;transform:translateY(800px);"></div>
+	<div class="dev_note scene-1-txt-1" style="height:1100px;transform:translateY(1200px);"></div>
+	<div class="dev_note scene-1-txt-2" style="height:900px;transform:translateY(1500px);"></div>
+	
+	<div class="dev_note scene-2-back" style="height:3100px;transform:translateY(2300px);"></div>
+	<div class="dev_note scene-2-sword" style="height:2000px;transform:translateY(2600px);"></div>
+	<div class="dev_note scene-2-txt-hand" style="height:900px;transform:translateY(2700px);"></div>
+	<div class="dev_note scene-2-blade" style="height:1900px;transform:translateY(3500px);"></div>
+	<div class="dev_note scene-2-txt-soul" style="height:1500px;transform:translateY(3700px);"></div>
+	
+	<div class="dev_note scene-3-back" style="height:4800px;transform:translateY(5500px);"></div>
+	<div class="dev_note scene-3-sea" style="height:5600px;transform:translateY(6000px);"></div>
+	<div class="dev_note scene-3-sun" style="height:4000px;transform:translateY(6400px);"></div>
+	<div class="dev_note scene-3-miyamoto" style="height:2800px;transform:translateY(7300px);"></div>
+	<div class="dev_note scene-3-txt-sea" style="height:1500px;transform:translateY(6800px);"></div>
+	<div class="dev_note scene-3-txt-calm" style="height:1300px;transform:translateY(8300px);"></div>
+	<div class="dev_note scene-3-waves" style="height:1600px;transform:translateY(10000px);"></div>
+	<div class="dev_note scene-3-vicious" style="height:1600px;transform:translateY(10000px);"></div>
+	
+	<div class="dev_note scene-4-back" style="height:10200px;transform:translateY(11600px);"></div>
+	<div class="dev_note scene-4-town-container" style="height:9800px;transform:translateY(11900px);"></div>
+	<div class="dev_note scene-4-woman" style="height:3800px;transform:translateY(12500px);"></div>
+	<div class="dev_note scene-4-thugs" style="height:5900px;transform:translateY(12500px);"></div>
+	<div class="dev_note scene-4-miyamoto" style="height:7600px;transform:translateY(14000px);"></div>
+	<div class="dev_note scene-4-txt-save" style="height:1500px;transform:translateY(14500px);"></div>
+	<div class="dev_note scene-4-txt-end" style="height:1500px;transform:translateY(16700px);"></div>
+	<div class="dev_note scene-4-txt-death" style="height:1500px;transform:translateY(19900px);"></div>
+	
+	<div class="dev_note scene-5-back" style="height:7500px;transform:translateY(22000px);"></div>
+	<div class="dev_note scene-5-sam-back" style="height:6400px;transform:translateY(22500px);"></div>
+	<div class="dev_note scene-5-samurai" style="height:6000px;transform:translateY(23000px);"></div>
+	<div class="dev_note scene-5-miyamoto-armor" style="height:3400px;transform:translateY(26000px);"></div>
+	<div class="dev_note scene-5-miyamoto" style="height:3000px;transform:translateY(30500px);"></div>
+	<div class="dev_note scene-5-end" style="height:2500px;transform:translateY(33800px);"></div>
+</div>
+
+
+<div class="scroll-begin" data-start="opacity:1;" data-100-start="opacity:0;">
+	<div class="cta-download-label">Scroll to begin</div>
+	<div class="cta-download-label" style="padding-top:10px;">&darr;</div>
+</div>
+
+<div style="position:fixed;left:50%;transform:translateX(-50%);bottom:10%;z-index:50000;"
+			 data-anchor-target=".scene-5-end"
+			 data-500-bottom="opacity:0;"
+			 data-bottom="opacity:1;" 
+			 >
+			<div style="position:relative;left:50%;transform:translateX(-50%);">
+			<div style="margin-bottom:20px;white-space:nowrap;text-transform:uppercase;text-align:center;font-size:0.6em;color:#fff;letter-spacing:0.2em;"><strong>&mdash; Read it now on &mdash;</strong></div>
+			<img src="images/global/logo_stela_white.svg" alt="Stela: mobile graphic novels comics and mbooks" style="position:relative;max-width:100px;left:50%;transform:translateX(-50%);" />
+			</div>
+			<div class="col-group cta-download-label-group">
+				<div class="lines col-2"></div>
+				<div class="cta-download-label col-8" style="text-align:center;">Download the <span class="no-break">Stela app</span></div>
+				<div class="lines col-2"></div>
+			</div>
+			<div class="col-group badges" style="padding:0 0 50px;text-align:center;">
+				<div class="col-mb-12 col-6 col-dt-6"><a id="trackAppleClose" href="https://0ev-i.tlnk.io/serve?action=click&campaign_id_ios=390013&destination_id_ios=369575&publisher_id=366368&site_id_ios=112079" target="_blank"><img src="images/app_badges/app_store_badge.svg" class="app_badge" alt="Download on the App Store" /></a></div>
+				<div class="col-mb-12 col-6 col-dt-6"><a id="trackGoogleClose" href="https://hxk-m.tlnk.io/serve?action=click&campaign_id_android=434659&destination_id_android=495837&publisher_id=366368&site_id_android=138308" target="_blank"><img src="images/app_badges/google-play-badge.png" class="app_badge" alt="Get it on Google Play" /></a></div>
+			</div>
+</div>
+	
+<a name="top"></a>	
+<div class="stage">
+	
+	<div class="section scene-1">
+		
+		<div style="position:absolute;background-color:rgba(51,51,51,1.0);height:100%; width:100%;"
+			 data-anchor-target=".scene-1-back"
+			 data-top="background-color:rgba(51,51,51,1.0);"
+			 data-top-bottom="background-color:rgba(51,51,51,0.0);"
+		>
+		</div>
+		
+		<div style="position:absolute;transform: translate(-50%,-50%);top:50%;left:50%;" data-anchor-target=".scene-1-logo" data-top="transform: translate(-50%,-50%);opacity:1;" data-top-bottom="transform: translate(-50%,-200%);opacity:0;">
+			<img src="images/global/logo_stela_white.svg" alt="" style="position:relative;max-width:100px;left:50%;transform:translateX(-50%);" />
+			<div style="margin-top:10px;white-space: nowrap;text-transform: uppercase;font-size: 0.6em;color: #fff;letter-spacing: 0.2em;text-align: center;"><strong>&mdash; Presents &mdash;</strong></div>
+		</div>
+		
+		<div style="position:absolute;transform: translate(-50%,-50%);top:45%;left:50%;">
+		<div style="position:relative; overflow: hidden;" 
+			 data-anchor-target=".scene-1-swipe"
+			 data-top="transform:translateY(-47px);height:0px;"
+			 data--100-top="transform:translateY(50px);height:195px;"
+			 data--200-top="transform:translateY(50px);"
+			 data--600-top="transform:translateY(0px);"
+			 data-200-top-bottom="transform:translateY(0px);opacity:1;"
+			 data-top-bottom="transform:translateY(-40px);opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc1_swipe.jpg" alt="" style="position:relative;left:50%;transform: translateX(-50%);" />
+		</div>
+		
+		<div style="position:relative;margin-top:10px;"
+			 data-anchor-target=".scene-1-txt-1"
+			 data-top="transform:translateY(20px);opacity:0;"
+			 data--200-top="transform:translateY(0px);opacity:1;"
+			 data-200-top-bottom="transform:translateY(0px);opacity:1;"
+			 data-top-bottom="transform:translateY(-20px);opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc1_txt_bushido.png" alt="" style="position:relative;left:50%;transform: translateX(-50%);" />
+		</div>
+		
+		<div style="position:relative;margin-top:10px;"
+			 data-anchor-target=".scene-1-txt-2"
+			 data-top="transform:translateY(20px);opacity:0;"
+			 data--200-top="transform:translateY(0px);opacity:1;"
+			 data-200-top-bottom="transform:translateY(0px);opacity:1;"
+			 data-top-bottom="transform:translateY(-20px);opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc1_txt_way.png" alt="" style="position:relative;left:50%;transform: translateX(-50%);" />
+		</div>
+		</div>		
+	</div>
+	
+	<div class="section scene-2">
+		
+		<div style="position:absolute;background-color:rgba(51,51,51,1);height:100%; width:100%;"
+			 data-anchor-target=".scene-2-back"
+			 data-top="background-color:rgba(51,51,51,0);"
+			 data--500-top="background-color:rgba(51,51,51,1);"
+			 data--1200-top="background-color:rgba(51,51,51,1);"
+			 data-200-top-bottom="background-color:rgba(51,51,51,0.8);"
+			 data-top-bottom="background-color:rgba(51,51,51,0);"
+			 >
+		</div>
+		
+		<div style="position:absolute;right:23%;bottom:5%;" 
+			 data-anchor-target=".scene-2-blade"
+			 data-top="opacity:0;"
+			 data--200-top="opacity:1;"
+			 data-200-top-bottom="opacity:1;"
+			 data-top-bottom="opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc2_glow.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;right:45%;" 
+			 data-anchor-target=".scene-2-sword"
+			 data-top="top:100%;"
+			 data--300-top="top:25%;"
+			 data-top-bottom="top:20%;"
+			 >
+			<div style="position:absolute;overflow:hidden;width:250px;transform:translateY(0);"
+			 data-anchor-target=".scene-2-blade"
+			 data-top="transform:translateY(0px);"
+			 data--200-top="transform:translateY(-150px);"
+			 data-200-top-bottom="transform:translateY(-170px);"
+			 data-top-bottom="transform:translateY(-2500px);opacity:1;"
+			 data--50-top-bottom="transform:translateY(-2500px);opacity:0;"
+			>
+				<img src="images/novels/bofr/sc2_sword.png" alt="" style="position:relative;width:100%;" />
+			</div>
+			<div style="position:absolute;overflow:hidden;width:250px;"
+			 data-anchor-target=".scene-2-blade"
+			 data-200-top-bottom="transform:translateY(0px);"
+			 data-top-bottom="transform:translateY(500px);opacity:1;"
+			 data--50-top-bottom="transform:translateY(500px);opacity:0;"
+			>
+				<img src="images/novels/bofr/sc2_scabbard.png" alt="" style="position:relative;width:100%;" />
+			</div>
+		</div>
+		
+		
+		
+		<div style="position:absolute;overflow: hidden;left:25%;top:45%;width:400px;" 
+			 data-anchor-target=".scene-2-txt-hand"
+			 data-top="width:0px;"
+			 data--200-top="width:400px;"
+			 data-100-top-bottom="width:400px;transform:translateX(0px);opacity:1;"
+			 data-top-bottom="width:0px;transform:translateX(400px);opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc2_txt_hand.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;overflow: hidden;left:20%;top:40%;width:400px;" 
+			 data-anchor-target=".scene-2-txt-soul"
+			 data-top="width:0px;"
+			 data--200-top="width:400px;"
+			 data-100-top-bottom="width:400px;transform:translateX(0px);opacity:1;"
+			 data-top-bottom="width:0px;transform:translateX(400px);opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc2_txt_sword.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;overflow: hidden;left:25%;top:48%;width:450px;" 
+			 data-anchor-target=".scene-2-txt-soul"
+			 data--400-top="width:0px;"
+			 data--600-top="width:450px;"
+			 data-100-top-bottom="width:450px;transform:translateX(0px);opacity:1;"
+			 data-top-bottom="width:0px;transform:translateX(450px);opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc2_txt_soul.png" alt="" style="position:relative;" />
+		</div>
+		
+	</div>
+	
+	<div class="section scene-3">
+		
+		<div style="position:absolute;background-color:rgba(51,51,51,1);height:100%; width:100%;"
+			 data-anchor-target=".scene-3-back"
+			 data-top="background-color:rgba(51,51,51,0);"
+			 data--500-top="background-color:rgba(51,51,51,1);"
+			 data--1200-top="background-color:rgba(51,51,51,1);"
+			 data--3500-top="background-color:rgba(51,51,51,0.8);"
+			 data-200-top-bottom="background-color:rgba(51,51,51,0.8);"
+			 data-top-bottom="background-color:rgba(51,51,51,0);"
+			 >
+		</div>
+		
+		<div style="position:absolute;bottom:0%;left:50%; background-color:#ccc;width:500px;height:500px;border-radius:300px;box-shadow: 0px 0px 50px #ccc;"
+			data-anchor-target=".scene-3-sun"
+			data-top="bottom:-60%;left:20%;"
+			data--500-top="bottom:0%;left:20%;"
+			data-200-top-bottom="bottom:10%;left:22%;opacity:1;"
+			data-top-bottom="bottom:-60%;left:22%;opacity:0;"
+		>
+		</div>
+		<div style="position: absolute;bottom:0%;background-color:#000;width:100%;height:40%;"
+			data-anchor-target=".scene-3-sea"
+			data-top="bottom:-40%;"
+			data--500-top="bottom:0%;"
+			data-300-top-bottom="bottom:0%;opacity:1;"
+			data-100top-bottom="bottom:-40%;opacity:0;"
+		>
+		</div>
+		
+		<div style="position:absolute;overflow:hidden;width:120%;left:-5%;" 
+			 data-anchor-target=".scene-3-waves"
+			 data-top="bottom:-100%;left:-5%;opacity:0;"
+			 data--200-top="bottom:-10%;left:-5%;opacity:1;"
+			 data--240-top="left:-3%;"
+			 data--280-top="left:-5%;"
+			 data--320-top="left:-3%;"
+			 data--360-top="left:-5%;"
+			 data-200-top-bottom="bottom:-10%;opacity:1;"
+			 data-top-bottom="bottom:-100%;opacity:0;"
+		>
+			<div style="background-image:url(images/novels/bofr/sc3_waves.png);background-size:cover;background-repeat:repeat-x;background-position:bottom;width:100%;height:1500px;"></div>
+		</div>
+		
+		<div style="position:absolute;bottom:0%;background-color:rgba(34,34,34,1);width:100%;height:25%;"
+			data-anchor-target=".scene-3-sea"
+			data--300-top="bottom:-40%;"
+			data--600-top="bottom:0%;background-color:rgba(34,34,34,1);"
+			data-200-top-bottom="bottom:0%;background-color:rgba(34,34,34,1);"
+			data-top-bottom="bottom:-40%;background-color:rgba(34,34,34,0);"
+		>
+			
+			<div style="position:absolute;left:40%;"
+				data-anchor-target=".scene-3-sea"
+				data--300-top="top:0%;"
+				data--600-top="top:-160%;"
+			>
+				<img src="images/novels/bofr/sc3_miyamoto.png" alt="" style="position:absolute;top:100px;"
+					data-anchor-target=".scene-3-miyamoto"
+					data-top="opacity:1;"
+					data-100-top-bottom="opacity:1;transform:translateY(0px);"
+					data-top-bottom="opacity:0;transform:translateY(10px);"
+				/>
+				<img src="images/novels/bofr/sc3_miyamoto_cover.png" alt="" style="position:absolute;top:100px;"
+					data-anchor-target=".scene-3-miyamoto"
+					data-top="opacity:1;"
+					data--1000-top="opacity:0;" 
+				/>
+			</div>
+		</div>
+		
+		
+		<div style="position:absolute;overflow:hidden;left:50%;transform:translateX(-50%);top:50%;width:900px;" 
+			 data-anchor-target=".scene-3-vicious"
+			 data--400-top="opacity:0;"
+			 data--600-top="opacity:1;"
+			 data-400-top-bottom="opacity:1;"
+			 data-200-top-bottom="opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc3_txt_vicious.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;left:50%;bottom:35%;"
+				data-anchor-target=".scene-3-vicious"
+				data-top="opacity:0;bottom:36%;"
+				data--100-top="opacity:1;bottom:35%;"
+			 	data--400-top="opacity:1;bottom:33%;"
+			 	data-300-top-bottom="opacity:1;left:50%;"
+			 	data-100-top-bottom="opacity:0;left:-50%;"
+			>
+			<img src="images/novels/bofr/sc3_miyamoto_vicious.png" alt="" style="position:absolute;transform:translateX(-50%);top:-50px;" />
+		</div>
+		
+		<div style="position:absolute;overflow:hidden;left:30%;top:30%;width:600px;" 
+			 data-anchor-target=".scene-3-txt-sea"
+			 data--400-top="width:0px;"
+			 data--600-top="width:600px;"
+			 data-100-top-bottom="width:600px;transform:translateX(0px);opacity:1;"
+			 data-top-bottom="width:0px;transform:translateX(600px);opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc3_txt_sea.png" alt="" style="position:relative;" />
+		</div>
+		<div style="position:absolute;overflow:hidden;left:40%;top:30%;width:430px;" 
+			 data-anchor-target=".scene-3-txt-calm"
+			 data--400-top="width:0px;"
+			 data--600-top="width:430px;"
+			 data-100-top-bottom="width:430px;transform:translateX(0px);opacity:1;"
+			 data-top-bottom="width:0px;transform:translateX(430px);opacity:0;"
+			 >
+			<img src="images/novels/bofr/sc3_txt_calm.png" alt="" style="position:relative;" />
+		</div>
+		
+		
+		
+	</div>
+	
+	<div class="section scene-4">
+		
+		<div style="position:absolute;background-color:rgba(51,51,51,1);height:100%; width:100%;"
+			 data-anchor-target=".scene-4-back"
+			 data-top="background-color:rgba(51,51,51,0);"
+			 data--500-top="background-color:rgba(51,51,51,1);"
+			 data-200-top-bottom="background-color:rgba(51,51,51,1);"
+			 data-top-bottom="background-color:rgba(51,51,51,0);"
+			 >
+		</div>
+		
+		<div style="position:absolute;left:0%;bottom:0%;width:300%;height:100%;"
+			 data-anchor-target=".scene-4-town-container"
+			 data--1200-top="left:0%;"
+			 data--1500-top="left:-30%;"
+			 data--4200-top="left:-30%;"
+			 data--4300-top="left:-55%;"
+			 data--6200-top="left:-67%;"
+			 data--7700-top="left:-250%;"
+			 data--8000-top="left:-255%;"
+		>
+				
+			<div style="position:absolute;bottom:0%;background-color:rgba(34,34,34,1);width:300%;height:25%;"
+				data-anchor-target=".scene-4-town-container"
+				data--300-top="bottom:-40%;opacity:0;"
+				data--600-top="bottom:0%;opacity:1;"
+				data-200-top-bottom="bottom:0%;opacity:1;"
+				data-top-bottom="bottom:-40%;opacity:0;"
+			>
+			</div>
+				
+			<div style="position:absolute;bottom:0%;background-image:url(images/novels/bofr/sc4_wall2.jpg);width:300%;height:500px; bottom:25%;"
+				data-anchor-target=".scene-4-town-container"
+				data--300-top="bottom:-50%;opacity:0;"
+				data--600-top="bottom:25%;opacity:1;"
+				data-200-top-bottom="bottom:25%;opacity:1;"
+				data-top-bottom="bottom:-50%;opacity:0;"
+			>
+			</div>
+			
+		</div>
+		
+		<div style="position:absolute;bottom:0%;left:30%;"
+				data-anchor-target=".scene-4-woman"
+				data-top="bottom:10%;opacity:0;"
+				data--200-top="bottom:15%;left:30%;opacity:1;"
+			 	data--600-top="left:30%;"
+			 	data--900-top="left:5%;"
+				data-200-top-bottom="left:5%;opacity:1;"
+			 	data-top-bottom="left:-25%;opacity:0;"
+		>
+			<div style="position:absolute;bottom:50%;"
+				data-anchor-target=".scene-4-woman"
+			 	data--1900-top="opacity:1;"
+				data--2000-top="opacity:0;"
+			><img src="images/novels/bofr/sc4_woman_1-1.png" alt="" style="position:relative;" /></div>
+			<div style="position:absolute;bottom:50%;"
+				data-anchor-target=".scene-4-woman"
+			 	data--1900-top="opacity:0;"
+				data--2000-top="opacity:1;"
+			><img src="images/novels/bofr/sc4_woman_1-2.png" alt="" style="position:relative;top:-30px;" /></div>
+		</div>
+		
+		<div style="position:absolute;right:25%;bottom:0%;height:100%;"
+			 	data-anchor-target=".scene-4-thugs"
+				data-top="bottom:-10%;opacity:0;"
+				data--200-top="bottom:0%;right:0%;opacity:1;"
+			 	data--600-top="right:0%;"
+			 	data--900-top="right:25%;"
+			 	data--3600-top="right:25%;"
+			 	data--3700-top="right:55%;"
+			 	data--3750-top="right:57%;"
+			 	data--3800-top="right:55%;"
+			 	data--3850-top="right:57%;"
+			 	data--3900-top="right:55%;"
+			 	data--5700-top="right:58%;"
+			 	data-200-top-bottom="right:58%;opacity:1;"
+			 	data-top-bottom="right:150%;opacity:0;"
+		>
+			<div style="position:absolute;bottom:20%"
+				data-anchor-target=".scene-4-thugs"
+			 	data--1900-top="opacity:1;"
+				data--2000-top="opacity:0;"
+			><img src="images/novels/bofr/sc4_thug_1-1.png" alt="" style="position:relative;" /></div>
+			<div style="position:absolute;bottom:20%;"
+				data-anchor-target=".scene-4-thugs"
+			 	data--1900-top="opacity:0;"
+				data--2000-top="opacity:1;"
+				data--3600-top="opacity:1;"
+				data--3700-top="opacity:0;"
+			><img src="images/novels/bofr/sc4_thug_1-2.png" alt="" style="position:relative;right:130px;" /></div>
+			<div style="position:absolute;bottom:20%;"
+				data-anchor-target=".scene-4-thugs"
+			 	data--3600-top="opacity:0;"
+				data--3700-top="opacity:1;"
+			><img src="images/novels/bofr/sc4_thug_1-3.png" alt="" style="position:relative;right:130px;top:0px;" /></div>
+		</div>
+		
+		<div style="position:absolute;left:25%;bottom:0%;height:100%;"
+			 	data-anchor-target=".scene-4-miyamoto"
+				data-top="left:-50%;opacity:0;"
+				data--200-top="left:12%;opacity:1;"
+			 	data--400-top="left:15%;"
+			 	data--1900-top="left:15%;"
+			 	data--2100-top="left:16%;bottom:0%;"
+				data--2200-top="left:45%;bottom:20%;"
+			 	data--2400-top="left:45%;bottom:20%;"
+			 	data--4200-top="left:55%;bottom:25%;"
+			 	data--4600-top="left:50%;bottom:0%;"
+			 	data--5600-top="left:40%;"
+			 	data--5900-top="left:38%;"
+			 	data-200-top-bottom="left:38%;bottom:0%;opacity:1;"
+			 	data-top-bottom="left:38%;bottom:-50%;opacity:0;"
+		>
+			<div style="position:absolute;bottom:15%"
+				data-anchor-target=".scene-4-miyamoto"
+			 	data--2100-top="opacity:1;"
+				data--2200-top="opacity:0;"
+				data--5800-top="opacity:0;left:40px;"
+				data--5900-top="opacity:1;left:60px;"
+			><img src="images/novels/bofr/sc4_miyamoto_1-1.png" alt="" style="position:relative;" /></div>
+			<div style="position:absolute;bottom:15%"
+				data-anchor-target=".scene-4-miyamoto"
+			 	data--2100-top="opacity:0;"
+				data--2200-top="opacity:1;"
+				data--4500-top="opacity:1;"
+				data--4600-top="opacity:0;"
+			><img src="images/novels/bofr/sc4_miyamoto_1-2.png" alt="" style="position:relative;" /></div>
+			<div style="position:absolute;bottom:15%"
+				data-anchor-target=".scene-4-miyamoto"
+			 	data--4500-top="opacity:0;"
+				data--4600-top="opacity:1;"
+				data--5800-top="opacity:1;"
+				data--5900-top="opacity:0;"
+			>
+				<img src="images/novels/bofr/sc4_miyamoto_1-3.png" alt="" style="position:relative;" />
+				<div class="sc4-dust" style="position:absolute;bottom:5px;left:80px;"
+					data-anchor-target=".scene-4-miyamoto"
+					data--5600-top="opacity:1;"
+			 		data--5900-top="opacity:0;"
+				><img src="images/novels/bofr/sc4_dust.png" alt="" /></div>
+				<div class="sc4-dust" style="position:absolute;bottom:7px;right:50px;"
+					data-anchor-target=".scene-4-miyamoto"
+					data--5600-top="opacity:1;"
+			 		data--5900-top="opacity:0;"
+				><img src="images/novels/bofr/sc4_dust.png" alt="" /></div>
+			</div>
+		</div>
+		
+		
+		<div style="position:absolute;right:25%;bottom:0%;height:100%;"
+			 	data-anchor-target=".scene-4-thugs"
+				data-top="bottom:-10%;opacity:0;"
+				data--200-top="bottom:0%;right:0%;opacity:1;"
+			 	data--600-top="right:0%;"
+			 	data--900-top="right:25%;"
+			 	data--3600-top="right:25%;"
+			 	data--3700-top="right:55%;"
+			 	data--3750-top="right:53%;"
+			 	data--3800-top="right:55%;"
+			 	data--3850-top="right:53%;"
+			 	data--3900-top="right:55%;"
+			 	data--5700-top="right:54%;"
+			 	data-200-top-bottom="right:50%;opacity:1;"
+			 	data-top-bottom="right:150%;opacity:0;"
+		>
+			<div style="position:absolute;bottom:16%;"
+				data-anchor-target=".scene-4-thugs"
+			 	data--1900-top="opacity:1;"
+				data--2000-top="opacity:0;"
+			><img src="images/novels/bofr/sc4_thug_2-1.png" alt="" style="position:relative;left:120px;" /></div>
+			<div style="position:absolute;bottom:16%;"
+				data-anchor-target=".scene-4-thugs"
+			 	data--1900-top="opacity:0;"
+				data--2000-top="opacity:1;"
+				data--3600-top="opacity:1;"
+				data--3700-top="opacity:0;"
+			><img src="images/novels/bofr/sc4_thug_2-2.png" alt="" style="position:relative;left:20px;" /></div>
+			<div style="position:absolute;bottom:18%;"
+				data-anchor-target=".scene-4-thugs"
+			 	data--3600-top="opacity:0;"
+				data--3700-top="opacity:1;"
+			><img src="images/novels/bofr/sc4_thug_2-3.png" alt="" style="position:relative;left:20px;top:-200px;" /></div>
+		</div>
+		
+		
+		<div style="position:absolute;overflow:hidden;left:30%;top:20%;width:600px;" 
+			 data-anchor-target=".scene-4-txt-save"
+			 data-top="width:0px;"
+			 data--200-top="width:600px;"
+			 data-200-top-bottom="width:600px;transform:translateX(0px);opacity:1;"
+			 data-top-bottom="width:0px;transform:translateX(600px);opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc4_txt_save.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;overflow:hidden;left:30%;top:20%;width:780px;" 
+			 data-anchor-target=".scene-4-txt-end"
+			 data-top="width:0px;"
+			 data--200-top="width:780px;"
+			 data-200-top-bottom="width:780px;transform:translateX(0px);opacity:1;"
+			 data-top-bottom="width:0px;transform:translateX(780px);opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc4_txt_end.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;overflow:hidden;left:20%;top:15%;width:800px;" 
+			 data-anchor-target=".scene-4-txt-death"
+			 data-top="width:0px;"
+			 data--200-top="width:800px;"
+			 data-500-top-bottom="width:800px;transform:translateX(0px);opacity:1;"
+			 data-300-top-bottom="width:0px;transform:translateX(800px);opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc4_txt_death.png" alt="" style="position:relative;" />
+		</div>
+		<div style="position:absolute;overflow:hidden;right:20%;top:25%;width:800px;" 
+			 data-anchor-target=".scene-4-txt-death"
+			 data--300-top="width:0px;"
+			 data--500-top="width:800px;"
+			 data-200-top-bottom="width:800px;opacity:1;"
+			 data-top-bottom="width:0px;opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc4_txt_cold.png" alt="" style="position:relative;" />
+		</div>
+	</div>
+
+	<div class="section scene-5">
+		
+		<div style="position:absolute;background-color:rgba(51,51,51,1);height:100%; width:100%;"
+			 data-anchor-target=".scene-5-back"
+			 data-top="background-color:rgba(51,51,51,0);"
+			 data--500-top="background-color:rgba(51,51,51,1);"
+			 data-200-top-bottom="background-color:rgba(51,51,51,1);"
+			 data-top-bottom="background-color:rgba(24,24,24,1);"
+			 >
+		</div>
+		
+		<div style="position:absolute;background-image:url(images/novels/bofr/sc5_bg2.jpg);background-size:70%;background-repeat:repeat-x;background-position:bottom;width:100%;height:100%;bottom:-10%;"
+			 data-anchor-target=".scene-5-sam-back"
+			 data-top="opacity:0;bottom:-10%;"
+			 data--500-top="opacity:1;"
+			 data--4200-top="opacity:1;bottom:0%;"
+			 data-200-top-bottom="opacity:1;"
+			 data-top-bottom="opacity:0;"
+			 >
+		</div>
+		
+		<div style="position:absolute;left:-5%;bottom:-15%;width:50%;"
+			 data-anchor-target=".scene-5-samurai"
+			 data-top="opacity:0;"
+			 data--200-top="opacity:1;bottom:-15%;"
+			 data--4200-top="opacity:1;bottom:-5%;"
+			 data-200-top-bottom="opacity:1;"
+			 data-top-bottom="opacity:0;"
+		>
+		<img src="images/novels/bofr/sc5_samurai_1.png" alt="" style="position:relative;width:100%;max-width:1200px;" />
+		</div>
+		
+		<div style="position:absolute;right:-10%;bottom:-15%;width:50%;"
+			 data-anchor-target=".scene-5-samurai"
+			 data--400-top="opacity:0;"
+			 data--600-top="opacity:1;bottom:-15%;"
+			 data--4200-top="opacity:1;bottom:-5%;"
+			 data-200-top-bottom="opacity:1;"
+			 data-top-bottom="opacity:0;"
+		>
+		<img src="images/novels/bofr/sc5_samurai_4.png" alt="" style="position:relative;width:100%;max-width:1200px;" />
+		</div>
+		
+		<div style="position:absolute;left:5%;bottom:-12%;width:60%;"
+			 data-anchor-target=".scene-5-samurai"
+			 data--800-top="opacity:0;"
+			 data--1000-top="opacity:1;bottom:-12%;"
+			 data--4200-top="opacity:1;bottom:0%;"
+			 data-200-top-bottom="opacity:1;"
+			 data-top-bottom="opacity:0;"
+		>
+		<img src="images/novels/bofr/sc5_samurai_2.png" alt="" style="position:relative;width:100%;max-width:1200px;" />
+		</div>
+		
+		<div style="position:absolute;right:5%;bottom:-12%;width:60%;"
+			 data-anchor-target=".scene-5-samurai"
+			 data--1200-top="opacity:0;"
+			 data--1400-top="opacity:1;bottom:-12%;"
+			 data--4200-top="opacity:1;bottom:0%;"
+			 data-200-top-bottom="opacity:1;"
+			 data-top-bottom="opacity:0;"
+		>
+		<img src="images/novels/bofr/sc5_samurai_3.png" alt="" style="position:relative;width:100%;max-width:1200px;" />
+		</div>
+		
+		<div style="position:absolute;left:50%;transform: translateX(-50%);bottom:-5%;width:70%;"
+			 data-anchor-target=".scene-5-miyamoto-armor"
+			 data-top="opacity:0;"
+			 data--200-top="opacity:1;bottom:-5%;"
+			 data--3000-top="opacity:1;bottom:0%;"
+			 data-200-top-bottom="opacity:1;"
+			 data-top-bottom="opacity:0;"
+		>
+		<img src="images/novels/bofr/sc5_miyamoto_armor.png" alt="" style="position:relative;width:100%;max-width:1200px;" />
+		</div>
+		
+		<div class="sc5_smoke-back" style="position:absolute;background-image:url(images/novels/bofr/sc5_smoke_back.png);background-size:406px 858px;background-repeat:repeat-x;background-position:bottom;width:200%;height:100%;bottom:-10%;left:-100%"
+			 data-anchor-target=".scene-5-miyamoto"
+			 data--800-top="opacity:0;"
+			 data--1800-top="opacity:1;"
+			 >
+		</div>
+		
+		<div style="position:absolute;left:80%;transform:translateX(-80%);bottom:-10%;width:80%;"
+			 data-anchor-target=".scene-5-miyamoto"
+			 data--300-top="opacity:0;bottom:-20%;"
+			 data--900-top="opacity:1;bottom:-12%;"
+			 data-200-top-bottom="opacity:1;bottom:-10%;"
+			 data-top-bottom="opacity:0;"
+		>
+		<img src="images/novels/bofr/sc5_miyamoto.png" alt="" style="position:relative;width:100%;max-width:1200px;" />
+		</div>
+		
+		<div style="position:absolute;left:50%;transform:translateX(-50%) translateY(-50%);top:50%;"
+			 data-anchor-target=".scene-5-end"
+			 data-top="opacity:0;"
+			 data-700-bottom="opacity:1;" 
+		>
+		<img src="images/novels/bofr/sc5_logo.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div class="sc5_smoke-fore" style="position:absolute;background-image:url(images/novels/bofr/sc5_smoke_fore.png);background-size:325px 687px;background-repeat:repeat-x;background-position:bottom;width:200%;height:100%;bottom:-10%;"
+			 data-anchor-target=".scene-5-miyamoto"
+			 data--800-top="opacity:0;"
+			 data--1800-top="opacity:1;"
+			 >
+		</div>
+		
+		
+		<div style="position:absolute;overflow:hidden;left:30%;top:15%;width:600px;" 
+			 data-anchor-target=".scene-5-samurai"
+			 data--300-top="width:0px;"
+			 data--500-top="width:600px;"
+			 data--2000-top="width:600px;transform:translateX(0px);opacity:1;"
+			 data--2200-top="width:0px;transform:translateX(600px);opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc5_txt_beyond.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;overflow:hidden;left:30%;top:25%;width:750px;" 
+			 data-anchor-target=".scene-5-samurai"
+			 data--700-top="width:0px;"
+			 data--900-top="width:600px;"
+			 data--2200-top="width:600px;transform:translateX(0px);opacity:1;"
+			 data--2400-top="width:0px;transform:translateX(600px);opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc5_txt_legend.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;left:50%;transform:translateX(-50%);top:60%;width:500px;" 
+			 data-anchor-target=".scene-5-miyamoto-armor"
+			 data--200-top="opacity:0;"
+			 data--600-top="opacity:1;"
+			 data--2200-top="opacity:1;"
+			 data--2400-top="opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc5_txt_saint.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:absolute;left:50%;transform:translateX(-50%);bottom:15%;" >
+		<div style="position:relative;text-align: center;" 
+			 data-anchor-target=".scene-5-miyamoto"
+			 data-top="opacity:0;"
+			 data--400-top="opacity:1;"
+			 data-500-top-bottom="opacity:1;"
+			 data-300-top-bottom="opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc5_txt_iam.png" alt="" style="position:relative;" />
+		</div>
+		
+		<div style="position:relative;" 
+			 data-anchor-target=".scene-5-miyamoto"
+			 data--600-top="opacity:0;"
+			 data--1000-top="opacity:1;"
+			 data-500-top-bottom="opacity:1;"
+			 data-300-top-bottom="opacity:0;"
+			 >
+				<img src="images/novels/bofr/sc5_text_miyamoto.png" alt="" style="position:relative;" />
+		</div>
+		</div>
+		
+	</div>
+
+</div>
+
+<div class="full-scroll" style="position:relative;height:36300px;">&nbsp;</div>
+</div>
+	
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="js/skrollr.min.js"></script>
+	
+<script type="text/javascript">
+
+	if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		skrollr.init({
+			forceHeight: false
+		});
+	}
+	/*$("a[href='#top']").click(function() {
+  		$("html, body").animate(window.scrollTo(0, 0));
+  		return false;
+	});
+	
+	
+	$("a[href='#bottom']").click(function(){
+		$("html, body").animate(window.scrollTo(0, document.body.scrollHeight));
+		return false;
+	});
+	
+	$("a[href='#middle']").click(function(){
+		$("html, body").animate(window.scrollTo(0, (document.body.scrollHeight / 2)));
+		return false;
+	});*/
+	
+var trackAppleClose = document.getElementById('trackAppleClose');
+  trackAppleClose.addEventListener(
+    'click', 
+    function() { 
+      fbq('track', 'initiateCheckout', {
+        content_ids : 'fivering_webdownload01', 
+        content_name : 'fiveringLP_ios',
+        content_type : 'LP_title' 
+      });
+	  snaptr('track', 'START_CHECKOUT',{'item_category':'mbook', 'item_ids':['five_ring', 'LP_ios']});
+    },
+    false
+  );
+	
+var trackGoogleClose = document.getElementById('trackGoogleClose');
+  trackGoogleClose.addEventListener(
+    'click', 
+    function() { 
+      fbq('track', 'initiateCheckout', {
+        content_ids : 'fivering_webdownload02', 
+        content_name : 'fiveringLP_android',
+        content_type : 'LP_title' 
+      });
+	  snaptr('track', 'START_CHECKOUT',{'item_category':'mbook', 'item_ids':['five_ring', 'LP_android']});
+    },
+    false
+  );
+	
+</script>
+	
+	
+</body>
+</html>
